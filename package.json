@@ -10,14 +10,14 @@
     "url": "https://github.com/mikkoh"
   },
   "dependencies": {
+  },
+  "devDependencies": {
+    "wzrd": "^1.2.1",
     "gl-geometry": "^1.0.3",
     "gl-matrix": "^2.1.0",
     "gl-now": "^1.4.0",
     "mesh-combine": "^1.1.0",
     "simple-3d-shader": "0.0.0"
-  },
-  "devDependencies": {
-    "wzrd": "^1.2.1"
   },
   "scripts": {
     "test": "open http://localhost:9966 && wzrd test/index.js"
