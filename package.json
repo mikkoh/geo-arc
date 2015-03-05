@@ -1,6 +1,6 @@
 {
   "name": "geo-arc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creates a 2d arc in 3d space",
   "main": "index.js",
   "license": "MIT",
@@ -9,8 +9,7 @@
     "email": "me@mikkoh.com",
     "url": "https://github.com/mikkoh"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "wzrd": "^1.2.1",
     "gl-geometry": "^1.0.3",
