@@ -1,6 +1,6 @@
 {
   "name": "geo-arc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Creates a 2d arc in 3d space",
   "main": "index.js",
   "license": "MIT",
