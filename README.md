@@ -7,7 +7,7 @@ Creates a 2d arc in 3d space.
 
 ## Usage
 
-[![NPM](https://nodei.co/npm/geoArc.png)](https://www.npmjs.com/package/geoArc)
+[![NPM](https://nodei.co/npm/geo-arc.png)](https://www.npmjs.com/package/geo-arc)
 
 ### Example
 
