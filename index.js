@@ -82,9 +82,9 @@ function createGeometry(options, positions, cells) {
         if(i > 0 && j + 1 < lenJ) {
 
           cells.push( [ 
-                        prevSlideIdx + j, 
+                        curSlideIdx + j,
                         prevSlideIdx + j + 1, 
-                        curSlideIdx + j 
+                        prevSlideIdx + j
                       ]);
 
           cells.push( [ 

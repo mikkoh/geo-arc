@@ -2,14 +2,15 @@ var shell = require('gl-now')( {
 
 	clearColor: [ 1, 1, 1, 1 ]
 });
-var simple3DShader = require('simple-3d-shader');
+var glslify = require('glslify');
+var createShader = require('gl-shader');
 var createGeometry = require('gl-geometry');
 var meshCombine = require('mesh-combine');
 var mat4 = require('gl-matrix').mat4;
 var geoArc = require('./..');
 
 var rotation = 0;
-var cellSize = 2;
+var cellSize = 3;
 var gl, geo, shader, model, projection, drawWith;
 
 
@@ -62,7 +63,11 @@ shell.on( 'gl-init', function() {
 
 	geo = meshCombine( allGeo );
 
-	shader = simple3DShader( gl );
+	shader = createShader( 
+		gl,
+		glslify(__dirname + '/test.vert'),
+		glslify(__dirname + '/test.frag')
+	);
 
 	mesh = createGeometry( gl )
 	.attr( 'positions', geo.positions )
