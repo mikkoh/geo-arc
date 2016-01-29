@@ -32,7 +32,8 @@ function createGeometry(options, positions, cells) {
     var radDist = o.endRadian - o.startRadian;
     var numSlices = Math.floor(Math.abs(radDist) / (Math.PI * 2) * o.numSlices);
     var radInc = radDist / numSlices;
-    var bandInc = (o.outerRadius - o.innerRadius) / o.numBands;
+    var numBandIncs = (o.numBands == 1) ? 1 : o.numBands - 1;
+    var bandInc = (o.outerRadius - o.innerRadius) / numBandIncs;
     var cRad, x, y, z, cRadius, curSlideIdx, prevSlideIdx;
 
   for(var i = 0, len = numSlices; i <= len; i++) {
