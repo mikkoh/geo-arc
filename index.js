@@ -4,7 +4,8 @@ function geoArc(options) {
 
   var geo = {
     positions: [],
-    cells: []
+    cells: [],
+    uvs: []
   };
 
   options = options || {};
@@ -20,19 +21,20 @@ function geoArc(options) {
   options.numSlices = options.numSlices || 40;
   options.drawOutline = options.drawOutline !== undefined ? options.drawOutline : true;
 
-  createGeometry(options, geo.positions, geo.cells);
+  createGeometry(options, geo.positions, geo.cells, geo.uvs);
 
   return geo;
 }
 
-function createGeometry(options, positions, cells) {
+function createGeometry(options, positions, cells, uvs) {
 
     var o = options;
     var idxSize = o.cellSize;
     var radDist = o.endRadian - o.startRadian;
     var numSlices = Math.floor(Math.abs(radDist) / (Math.PI * 2) * o.numSlices);
     var radInc = radDist / numSlices;
-    var bandInc = (o.outerRadius - o.innerRadius) / o.numBands;
+    var numBandIncs = (o.numBands == 1) ? 1 : o.numBands - 1;
+    var bandInc = (o.outerRadius - o.innerRadius) / numBandIncs;
     var cRad, x, y, z, cRadius, curSlideIdx, prevSlideIdx;
 
   for(var i = 0, len = numSlices; i <= len; i++) {
@@ -50,6 +52,7 @@ function createGeometry(options, positions, cells) {
       z = Math.sin(cRad) * cRadius + o.z;
 
       positions.push([ x, y, z ]);
+      uvs.push([i/numSlices, j/numBandIncs])
 
       //if we've added in positions then we'll add cells
       if(idxSize == 1) {
