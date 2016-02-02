@@ -23,6 +23,7 @@ var geoArc = require('geo-arc');
 // geo will be a Object will two properties:
 // positions - the vertices
 // cells - the indices to draw the arc
+// uvs - uv values for for the arc
 var geo = geoArc( {
     cellSize: 3, // 1 == points, 2 == lines, 3 == triangles
     x: 0, // x position of the center of the arc
@@ -37,6 +38,9 @@ var geo = geoArc( {
     drawOutline: true // if cellSize == 2 draw only the outside of the shape
 });
 ```
+
+Generated uv values look like this:
+![Generated UVs](https://cloud.githubusercontent.com/assets/171001/12681332/062c57fe-c6a6-11e5-98ea-548fd44504c7.png)
 
 ## License
 
