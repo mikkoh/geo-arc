@@ -20,7 +20,7 @@ A simple usage example with default values being passed as settings:
 ```javascript
 var geoArc = require('geo-arc');
 
-// geo will be a Object will two properties:
+// geo will be a Object will three properties:
 // positions - the vertices
 // cells - the indices to draw the arc
 // uvs - uv values for for the arc
